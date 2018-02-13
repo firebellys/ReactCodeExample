@@ -19,7 +19,7 @@ const initialState = {
 
 // Reducer
 export const reducer = (state = initialState, action) => {
-    console.log('Dispatch Request: ' + action.type)
+    //console.log('Dispatch Request: ' + action.type)
     switch (action.type) {
         case types.USER_LOGIN:
             if (action.username === 'test' && action.password === '1234') {
@@ -65,7 +65,7 @@ const generateData = () => {
         { name: 'Page F', uv: largeRandom(1000, 3000), pv: largeRandom(1000, 8000), amt: largeRandom(2000, 300) },
         { name: 'Page G', uv: largeRandom(1000, 3000), pv: largeRandom(1000, 8000), amt: largeRandom(2000, 300) },
     ]
-    console.log(data)
+    //console.log(data)
     return data
 }
 

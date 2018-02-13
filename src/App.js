@@ -5,14 +5,17 @@ import LoginContainer from './containers/Login/LoginContainer';
 import StartContainer from './containers/Start/StartContainer';
 import AboutContainer from './containers/About/AboutContainer';
 import HeaderArea from './components/HeaderArea';
+import FooterArea from './components/FooterArea';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom';
 import * as AllActions from './actions/AppActions'
 
-import './App.css';
+// Styles
+import './styles/App.css';
 
+// Main application class
 class App extends Component {
   state = {
     userIsLoggedIn: false,
@@ -33,9 +36,7 @@ class App extends Component {
           <Route path="/login" component={LoginContainer} />
           <Route path="/about" component={AboutContainer} />
         </div>
-        <footer className="App-footer">
-          A little Footer
-        </footer>
+        <FooterArea />
       </div>
     );
   }

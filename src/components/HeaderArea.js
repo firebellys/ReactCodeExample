@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Logout from '../containers/Login/LogoutContainer'
 
-// Header section for page.
+// Header section for applications
 const HeaderArea = () => {
     return <div>
         <header className="App-header">

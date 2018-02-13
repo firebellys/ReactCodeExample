@@ -2,11 +2,11 @@
 
 This project is an example web application that makes use of different React componants and related tools.
 
-## Getting Started
+## Getting started
 
 This is a very simple web application so there isn't much you will need to get it running. It is self contained and doesn't require the use of any external APIs or services.
 
-## High Level Pieces
+## What's included
 
 Here is a short list of key components used in the example. These will serve as stepping stone to a deeper dive in the future.
 
@@ -43,7 +43,7 @@ For PROD Deployment
 yarn run build
 ```
 
-## Built With
+## Built with
 
 * [React](https://reactjs.org/) - Web Framework
 * [Redux](https://redux.js.org/) - State Management

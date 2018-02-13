@@ -21,6 +21,6 @@ module.exports = {
         "plugin:react/recommended"
     ],
     "rules": {       
-        "no-console":0
+        //"no-console":0
     }
 };

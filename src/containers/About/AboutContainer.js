@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 
+// Simple page with nothing on it
 class AboutContainer extends Component {
     render() {
         return (
