@@ -1,34 +1,38 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ChartsContainer from './containers/Charts/ChartsContainer';
 import LoginContainer from './containers/Login/LoginContainer';
 import StartContainer from './containers/Start/StartContainer';
+import AboutContainer from './containers/About/AboutContainer';
+import HeaderArea from './components/HeaderArea';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom';
-import './App.css';
-import AboutContainer from './containers/About/AboutContainer';
-import HeaderArea from './components/HeaderArea';
 import * as AllActions from './actions/AppActions'
+
+import './App.css';
 
 class App extends Component {
   state = {
     userIsLoggedIn: false,
     username: '',
     password: '',
-    data : []
+    data: []
   }
 
   render() {
     return (
       <div className="App">
         <HeaderArea />
-        <Route exact path="/" component={StartContainer} />
-        <Route exact path="/charts" render={() => (
-          this.props.loggedin ? (<ChartsContainer />) : (<LoginContainer />)
-        )} />
-        <Route path="/login" component={LoginContainer} />
-        <Route path="/about" component={AboutContainer} />
+        <div className="MainArea">
+          <Route exact path="/" component={StartContainer} />
+          <Route exact path="/charts" render={() => (
+            this.props.localUserIsLoggedIn ? (<ChartsContainer />) : (<LoginContainer />)
+          )} />
+          <Route path="/login" component={LoginContainer} />
+          <Route path="/about" component={AboutContainer} />
+        </div>
         <footer className="App-footer">
           A little Footer
         </footer>
@@ -37,12 +41,19 @@ class App extends Component {
   }
 }
 
+// Validate prop types
+App.propTypes = {
+  localUserIsLoggedIn: PropTypes.bool
+};
+
+// Map the redux state to local properties
 const mapStateToProps = state => {
   return {
-    loggedin: state.userIsLoggedIn
+    localUserIsLoggedIn: state.userIsLoggedIn
   }
 }
 
+// Map the redux dispatch events to local properties
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(AllActions, dispatch)
 })

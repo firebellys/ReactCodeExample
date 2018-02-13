@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import { connect } from 'react-redux';
 
@@ -19,6 +20,12 @@ export class ChartContainer extends Component {
     );
   }
 }
+
+// Validate prop types
+ChartContainer.propTypes = {
+  localData: PropTypes.object,
+  onChangeChartType: PropTypes.func
+};
 
 const mapStateToProps = state => {
   return {

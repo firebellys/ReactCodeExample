@@ -1,13 +1,14 @@
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { userLogout } from '../../actions/AppActions'
 
 class LogoutContainer extends Component {
     render() {
-        if (this.props.localIsLoggedin) {
+        if (this.props.localUserIsLoggedIn) {
             return (
-                <div><button onClick={this.props.userLogoutClick}>Logout</button></div>
+                <div>Hello {this.props.localUsername}. <button onClick={this.props.userLogoutClick}>Logout</button></div>
             );
         } else {
             return (
@@ -17,9 +18,18 @@ class LogoutContainer extends Component {
 
     }
 }
+
+// Validate prop types
+LogoutContainer.propTypes = {
+    localUserIsLoggedIn: PropTypes.bool,
+    localUsername: PropTypes.string,
+    userLogoutClick: PropTypes.func
+};
+
 const mapStateToProps = state => {
     return {
-        localIsLoggedin: state.userIsLoggedIn
+        localUserIsLoggedIn: state.userIsLoggedIn,
+        localUsername: state.username
     }
 }
 

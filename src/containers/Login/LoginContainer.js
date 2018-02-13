@@ -1,11 +1,12 @@
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { userLogin } from '../../actions/AppActions'
 
 class LoginContainer extends Component {
     render() {
-        if (this.props.localIsLoggedin) {
+        if (this.props.localUserIsLoggedIn) {
             return (
                 <div>
                     <h1>Login Container</h1>
@@ -23,9 +24,15 @@ class LoginContainer extends Component {
     }
 }
 
+// Validate prop types
+LoginContainer.propTypes = {
+    localUserIsLoggedIn: PropTypes.bool,
+    userLoginClick: PropTypes.func
+};
+
 const mapStateToProps = state => {
     return {
-        localIsLoggedin: state.userIsLoggedIn
+        localUserIsLoggedIn: state.userIsLoggedIn
     }
 }
 
