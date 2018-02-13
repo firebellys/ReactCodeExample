@@ -1,6 +1,6 @@
 # React Code Example
 
-This project is an example web application that makes use of different React componants and related tools.
+This project is an example web application that makes use of different React components and related tools.
 
 ## Getting started
 
@@ -10,8 +10,8 @@ This is a very simple web application so there isn't much you will need to get i
 
 Here is a short list of key components used in the example. These will serve as stepping stone to a deeper dive in the future.
 
-* React (16)
-* React Router (4)
+* React
+* React Router
 * Redux
 * ES6
 * Tests using Jest
