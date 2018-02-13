@@ -1,6 +1,7 @@
 {
   "name": "reactcodeexample",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Simple React application showcasing Redux and Jest",
   "private": true,
   "dependencies": {
     "babel-eslint": "^8.2.1",

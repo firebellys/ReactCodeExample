@@ -48,11 +48,9 @@ yarn run build
 * [React](https://reactjs.org/) - Web Framework
 * [Redux](https://redux.js.org/) - State Management
 * [Enzyme](https://github.com/airbnb/enzyme/) - React Testing
-* [Jest](https://facebook.github.io/jest/) - JavaScript Testing*
+* [Jest](https://facebook.github.io/jest/) - JavaScript Testing
 * [Highcharts](https://github.com/highcharts/highcharts) - Chart/Graph Provider
 * [CRA](https://github.com/facebook/create-react-app) - React Bootstrap
-
-Jest is using verson 20.0.4 as the latest version seems to have some issues with the latest React/Redux.
 
 ## Authors
 
