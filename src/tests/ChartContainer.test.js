@@ -3,7 +3,7 @@ import expect from 'expect'
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import { ChartContainer } from '../Charts/ChartsContainer'
+import { ChartContainer } from '../Containers/Charts/ChartsContainer'
 
 configure({ adapter: new Adapter() });
 

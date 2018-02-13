@@ -3,7 +3,7 @@ import { configure } from 'enzyme';
 import expect from 'expect';
 import Adapter from 'enzyme-adapter-react-16';
 
-import { reducer } from './Reducer'
+import { reducer } from '../store/Reducer'
 import * as types from '../constants/ActionTypes'
 
 configure({ adapter: new Adapter() });
