@@ -18,7 +18,7 @@ const initialState = {
 };
 
 // Reducer
-const reducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
     console.log('Dispatch Request: ' + action.type)
     switch (action.type) {
         case types.USER_LOGIN:

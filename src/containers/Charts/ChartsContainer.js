@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import { connect } from 'react-redux';
 
-class ChartContainer extends Component {
+export class ChartContainer extends Component {
   render() {
     return (
-      <div>
+      <div className="ChartArea">
+        <h1>Chart Area</h1>
         <button onClick = {this.props.onChangeChartType}>Change Chart</button>
         <LineChart width={600} height={300} data={this.props.localData} margin={{ top: 10, right: 0, bottom: 10, left: 0 }}>
           <Line type="monotone" dataKey="uv" stroke="#8884d8" />

@@ -1,14 +1,15 @@
 import React from 'react'
-import { configure, shallow, expect } from 'enzyme';
-import Adaptor from 'enzyme-adaptor-react-16';
-import ChartContainer from '../Charts/ChartContainer'
-import { LineChart } from 'recharts';
+import expect from 'expect'
+import { configure, shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-configure({ adaptor: new Adaptor() });
+import { ChartContainer } from '../Charts/ChartsContainer'
 
-describe('<ChartContainer />', () => {
+configure({ adapter: new Adapter() });
+
+describe('ChartContainer tests', () => {
     it('should have a chart displayed', () => {
         const wrapper = shallow(<ChartContainer />);
-        expect(wrapper.find(LineChart));
+        expect(wrapper.find('div').hasClass('ChartArea')).toBe(true);
     });
 });
