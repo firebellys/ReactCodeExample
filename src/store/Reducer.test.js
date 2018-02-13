@@ -46,4 +46,18 @@ describe('Reducer tests', () => {
             }
             )
     })
+    it('should handle USER_LOGOUT', () => {
+        expect(
+            reducer([], {
+                type: types.USER_LOGOUT
+            })
+        ).toEqual(
+            {
+                error: null,
+                password: '',
+                userIsLoggedIn: false,
+                username: ''
+            }
+            )
+    })
 });
