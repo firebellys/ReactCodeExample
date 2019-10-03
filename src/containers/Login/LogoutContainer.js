@@ -1,44 +1,21 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { userLogout } from "../../actions/AppActions";
 
-class LogoutContainer extends Component {
-  render() {
-    if (this.props.localUserIsLoggedIn) {
-      return (
-        <div>
-          Hello {this.props.localUsername}.{" "}
-          <button onClick={this.props.userLogoutClick}>Logout</button>
-        </div>
-      );
-    } else {
-      return <div></div>;
-    }
-  }
-}
+const LogoutContainer = () => {
+  const dispatch = useDispatch();
+  const userIsLoggedIn = useSelector(state => state.userIsLoggedIn);
+  const username = useSelector(state => state.username);
 
-// Validate prop types
-LogoutContainer.propTypes = {
-  localUserIsLoggedIn: PropTypes.bool,
-  localUsername: PropTypes.string,
-  userLogoutClick: PropTypes.func
+  return (
+    userIsLoggedIn && (
+      <div>
+        Hello {username}.
+        <br />
+        <button onClick={() => dispatch(userLogout())}>Logout</button>
+      </div>
+    )
+  );
 };
 
-const mapStateToProps = state => {
-  return {
-    localUserIsLoggedIn: state.userIsLoggedIn,
-    localUsername: state.username
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    userLogoutClick: () => dispatch(userLogout())
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(LogoutContainer);
+export default LogoutContainer;

@@ -1,17 +1,16 @@
 {
-  "name": "reactcodeexample",
-  "version": "1.0.0",
-  "description": "Simple React application showcasing Redux and Jest",
+  "name": "react-code-example",
+  "version": "2.0.0",
+  "description": "Simple React application showcasing Redux and Jest (now using hooks!)",
   "private": true,
   "dependencies": {
-    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-redux": "^5.0.6",
-    "react-router-dom": "^4.2.2",
+    "react-redux": "7.1.1",
+    "react-router-dom": "5.1.2",
     "react-scripts": "3.2.0",
     "recharts": "^1.7.1",
-    "redux": "^3.7.2"
+    "redux": "4.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -20,13 +19,12 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.3.0",
     "husky": "^3.0.8",
-    "jest-enzyme": "^4.2.0",
     "prettier": "1.18.2",
     "pretty-quick": "^1.11.1",
-    "redux-devtools": "^3.4.1"
+    "redux-devtools": "3.5.0"
   },
   "browserslist": {
     "production": [

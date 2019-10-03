@@ -1,15 +1,17 @@
 import React from "react";
-import expect from "expect";
-import { configure, shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import { render } from "@testing-library/react";
+import { fireEvent } from "@testing-library/dom";
 
-import { ChartContainer } from "../Containers/Charts/ChartsContainer";
-
-configure({ adapter: new Adapter() });
+import App from "../App";
 
 describe("ChartContainer tests", () => {
   it("should have a chart displayed", () => {
-    const wrapper = shallow(<ChartContainer />);
-    expect(wrapper.find("div").hasClass("ChartArea")).toBe(true);
+    const { getByText } = render(<App />);
+
+    // Navigate to Chart component
+    fireEvent.click(getByText("Charts"));
+    fireEvent.click(getByText("Login"));
+
+    expect(getByText("Chart Area")).toBeInTheDocument();
   });
 });

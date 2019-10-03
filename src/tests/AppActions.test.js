@@ -1,11 +1,5 @@
-import expect from "expect";
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
 import * as actions from "../actions/AppActions";
 import * as types from "../constants/ActionTypes";
-
-configure({ adapter: new Adapter() });
 
 describe("Action tests", () => {
   it("should create an action to login a user", () => {
