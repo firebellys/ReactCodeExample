@@ -10,7 +10,6 @@ describe("Reducer tests", () => {
       error: null
     });
   });
-
   it("should handle USER_LOGIN", () => {
     expect(
       reducer(
