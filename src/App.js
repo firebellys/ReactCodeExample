@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { createStore } from "redux";
-import reducer from "./store/Reducer";
+import { configureStore } from "redux-starter-kit";
+import rootReducer from "./reducers";
 import { Provider, useSelector } from "react-redux";
 import Charts from "./pages/Chart";
 import Login from "./components/Login";
@@ -15,7 +15,7 @@ import "./styles/index.css";
 import "./styles/App.css";
 import Logout from "./components/Logout";
 
-const store = createStore(reducer);
+const store = configureStore({ reducer: rootReducer });
 
 // Main application class
 const App = () => {

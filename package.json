@@ -11,7 +11,8 @@
     "react-router-dom": "5.1.2",
     "react-scripts": "3.2.0",
     "recharts": "^1.7.1",
-    "redux": "4.0.4"
+    "redux": "4.0.4",
+    "redux-starter-kit": "^0.7.0"
   },
   "scripts": {
     "start": "react-scripts start",

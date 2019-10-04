@@ -11,14 +11,13 @@ import {
 
 const largeRandom = (start, range) => start + Math.random() * range;
 
-const generateData = data =>
-  data.map(
-    produce(page => {
-      page.uv = largeRandom(1000, 3000);
-      page.pv = largeRandom(1000, 8000);
-      page.amt = largeRandom(2000, 300);
-    })
-  );
+const generateData = produce(draft => {
+  draft.forEach(page => {
+    page.uv = largeRandom(1000, 3000);
+    page.pv = largeRandom(1000, 8000);
+    page.amt = largeRandom(2000, 300);
+  });
+});
 
 const Chart = () => {
   const [data, setData] = useState([

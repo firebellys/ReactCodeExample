@@ -1,5 +1,5 @@
-import * as actions from "../actions/AppActions";
-import * as types from "../constants/ActionTypes";
+import { userLogin, userLogout } from "../actions";
+import * as types from "../actions/types";
 
 describe("Action tests", () => {
   it("should create an action to login a user", () => {
@@ -7,15 +7,17 @@ describe("Action tests", () => {
     const password = "1234";
     const expectedAction = {
       type: types.USER_LOGIN,
-      username,
-      password
+      payload: {
+        username,
+        password
+      }
     };
-    expect(actions.userLogin(username, password)).toEqual(expectedAction);
+    expect(userLogin({ username, password })).toEqual(expectedAction);
   });
   it("should create an action to logout a user", () => {
     const expectedAction = {
       type: types.USER_LOGOUT
     };
-    expect(actions.userLogout()).toEqual(expectedAction);
+    expect(userLogout()).toEqual(expectedAction);
   });
 });

@@ -1,5 +1,5 @@
-import reducer from "../store/Reducer";
-import * as types from "../constants/ActionTypes";
+import reducer from "../reducers";
+import * as types from "../actions/types";
 
 describe("Reducer tests", () => {
   it("should return the initial state", () => {
@@ -17,8 +17,10 @@ describe("Reducer tests", () => {
         {},
         {
           type: types.USER_LOGIN,
-          username: "test",
-          password: "1234"
+          payload: {
+            username: "test",
+            password: "1234"
+          }
         }
       )
     ).toEqual({
