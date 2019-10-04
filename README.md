@@ -55,6 +55,7 @@ yarn run build
 
 - [React](https://reactjs.org/) - Web Framework
 - [Redux](https://redux.js.org/) - Centralized State Management
+- [Immer](https://immerjs.github.io/immer) - Immutable state updates
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) - React Testing
 - [Jest](https://facebook.github.io/jest/) - JavaScript Testing
 - [Highcharts](https://github.com/highcharts/highcharts) - Chart/Graph Provider

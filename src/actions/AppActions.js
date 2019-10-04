@@ -9,6 +9,3 @@ export const userLogin = (username, password) => ({
 
 // System initiates logout
 export const userLogout = () => ({ type: types.USER_LOGOUT });
-
-// System initiates change chart
-export const changeChart = () => ({ type: types.CHANGE_CHART });
