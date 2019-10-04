@@ -1,8 +1,8 @@
 import reducer from "../reducers";
-import * as types from "../actions/types";
+import { userLogin, userLogout } from "../actions";
 
-describe("Reducer tests", () => {
-  it("should return the initial state", () => {
+describe("reducer tests", () => {
+  it("should return the initial state by default", () => {
     expect(reducer(undefined, {})).toEqual({
       userIsLoggedIn: false,
       username: "",
@@ -10,17 +10,14 @@ describe("Reducer tests", () => {
       error: null
     });
   });
-  it("should handle USER_LOGIN", () => {
+  it("should handle valid user login", () => {
     expect(
       reducer(
         {},
-        {
-          type: types.USER_LOGIN,
-          payload: {
-            username: "test",
-            password: "1234"
-          }
-        }
+        userLogin({
+          username: "test",
+          password: "1234"
+        })
       )
     ).toEqual({
       error: null,
@@ -29,15 +26,16 @@ describe("Reducer tests", () => {
       username: "test"
     });
   });
-  it("should handle USER_LOGOUT", () => {
+  it("should handle invalid user login", () => {
     expect(
-      reducer(
-        {},
-        {
-          type: types.USER_LOGOUT
-        }
-      )
+      reducer({}, userLogin({ username: "not_test", password: "4321" }))
     ).toEqual({
+      error: "Login Incorrect",
+      userIsLoggedIn: false
+    });
+  });
+  it("should handle USER_LOGOUT", () => {
+    expect(reducer({}, userLogout())).toEqual({
       error: null,
       password: "",
       userIsLoggedIn: false,
