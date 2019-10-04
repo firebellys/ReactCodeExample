@@ -1,5 +1,7 @@
 # React Code Example
 
+[![Edit react-code-example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/bpas247/ReactCodeExample/tree/master/?fontsize=14)
+
 [![GitHub Actions Build status][gh-actions-badge]][gh-actions]
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=bpas247/ReactCodeExample)](https://dependabot.com)
 
