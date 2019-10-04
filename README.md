@@ -1,6 +1,7 @@
 # React Code Example
 
 [![GitHub Actions Build status][gh-actions-badge]][gh-actions]
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=bpas247/ReactCodeExample)](https://dependabot.com)
 
 This project is an example web application that makes use of different React components and related tools.
 
