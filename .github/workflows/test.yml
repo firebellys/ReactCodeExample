@@ -1,0 +1,17 @@
+name: Run Tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+    steps:
+      - name: Checking out Repository
+        uses: actions/checkout@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+      - name: Install Dependencies
+        run: yarn install
+      - name: Run Testing Suite
+        run: yarn test
