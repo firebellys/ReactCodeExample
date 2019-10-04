@@ -1,5 +1,7 @@
 # React Code Example
 
+[![GitHub Actions Build status][gh-actions-badge]][gh-actions]
+
 This project is an example web application that makes use of different React components and related tools.
 
 ## Getting started
@@ -60,3 +62,6 @@ yarn run build
 
 - **Erik Umenhofer**
 - **Brady Pascoe**
+
+[gh-actions-badge]: https://github.com/bpas247/ReactCodeExample/workflows/Run%20Tests/badge.svg
+[gh-actions]: https://github.com/bpas247/ReactCodeExample/actions
