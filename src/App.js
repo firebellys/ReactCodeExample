@@ -3,16 +3,17 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { createStore } from "redux";
 import reducer from "./store/Reducer";
 import { Provider, useSelector } from "react-redux";
-import ChartsContainer from "./containers/Charts/ChartsContainer";
-import LoginContainer from "./containers/Login/LoginContainer";
-import StartContainer from "./containers/Start/StartContainer";
-import AboutContainer from "./containers/About/AboutContainer";
-import HeaderArea from "./components/HeaderArea";
-import FooterArea from "./components/FooterArea";
+import Charts from "./pages/Chart";
+import Login from "./components/Login";
+import Start from "./pages/Start";
+import About from "./pages/About";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 // Styles
 import "./styles/index.css";
 import "./styles/App.css";
+import Logout from "./components/Logout";
 
 const store = createStore(reducer);
 
@@ -22,20 +23,22 @@ const App = () => {
 
   return (
     <div className="App">
-      <HeaderArea />
+      <Header />
       <div className="MainArea">
-        <Route exact path="/" component={StartContainer} />
+        <Route
+          path="/"
+          render={() => (userIsLoggedIn ? <Logout /> : <Login />)}
+        />
+        <Route exact path="/" component={Start} />
         <Route
           exact
           path="/charts"
-          render={() =>
-            userIsLoggedIn ? <ChartsContainer /> : <LoginContainer />
-          }
+          render={() => userIsLoggedIn && <Charts />}
         />
-        <Route path="/login" component={LoginContainer} />
-        <Route path="/about" component={AboutContainer} />
+        <Route path="/login" component={Login} />
+        <Route path="/about" component={About} />
       </div>
-      <FooterArea />
+      <Footer />
     </div>
   );
 };

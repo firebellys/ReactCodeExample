@@ -1,9 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Logout from "../containers/Login/LogoutContainer";
 
 // Header section for applications
-const HeaderArea = () => (
+const Header = () => (
   <div>
     <header className="App-header">
       <NavLink className="Nav-Links" to="/">
@@ -16,11 +15,8 @@ const HeaderArea = () => (
         About
       </NavLink>
       <h1 className="App-title">React Code Example</h1>
-      <div>
-        <Logout />
-      </div>
     </header>
   </div>
 );
 
-export default HeaderArea;
+export default Header;

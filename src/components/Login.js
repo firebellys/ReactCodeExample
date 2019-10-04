@@ -1,14 +1,13 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { userLogin } from "../../actions/AppActions";
+import { userLogin } from "../actions/AppActions";
 
-const LoginContainer = () => {
+const Login = () => {
   const dispatch = useDispatch();
   const userIsLoggedIn = useSelector(state => state.userIsLoggedIn);
 
   return (
     <div>
-      <h1>Login Container</h1>
       {userIsLoggedIn ? (
         <span>Click log out to sign out</span>
       ) : (
@@ -20,4 +19,4 @@ const LoginContainer = () => {
   );
 };
 
-export default LoginContainer;
+export default Login;

@@ -1,10 +1,10 @@
 import React from "react";
 
 // Footer section for applications
-const FooterArea = () => (
+const Footer = () => (
   <div>
     <footer className="App-footer">React footer area</footer>
   </div>
 );
 
-export default FooterArea;
+export default Footer;

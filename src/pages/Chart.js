@@ -9,7 +9,7 @@ import {
 } from "recharts";
 import { useSelector, useDispatch } from "react-redux";
 
-const ChartContainer = () => {
+const Chart = () => {
   const dispatch = useDispatch();
   const data = useSelector(state => state.data);
 
@@ -35,4 +35,4 @@ const ChartContainer = () => {
   );
 };
 
-export default ChartContainer;
+export default Chart;

@@ -1,6 +1,6 @@
 import React from "react";
 
-const StartContainer = () => (
+const Start = () => (
   <div>
     <h1>Starting Page</h1>
     <div>
@@ -13,4 +13,4 @@ const StartContainer = () => (
   </div>
 );
 
-export default StartContainer;
+export default Start;
