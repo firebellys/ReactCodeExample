@@ -43,5 +43,13 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!./src/registerServiceWorker.js",
+      "!./src/index.js"
+    ]
   }
 }
