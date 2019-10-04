@@ -24,8 +24,7 @@ export default produce((draft, action) => {
       }
       break;
     case types.USER_LOGOUT:
-      return initialState;
     default:
-      return draft;
+      return initialState;
   }
 }, initialState);
