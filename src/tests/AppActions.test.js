@@ -18,10 +18,4 @@ describe("Action tests", () => {
     };
     expect(actions.userLogout()).toEqual(expectedAction);
   });
-  it("should create an action to change a chart", () => {
-    const expectedAction = {
-      type: types.CHANGE_CHART
-    };
-    expect(actions.changeChart()).toEqual(expectedAction);
-  });
 });
