@@ -21,7 +21,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/jest-dom": "^5.0.0",
     "@testing-library/react": "^9.4.0",
     "husky": "^4.0.10",
     "prettier": "1.19.1",
