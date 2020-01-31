@@ -1,62 +1,52 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import ChartsContainer from './containers/Charts/ChartsContainer';
-import LoginContainer from './containers/Login/LoginContainer';
-import StartContainer from './containers/Start/StartContainer';
-import AboutContainer from './containers/About/AboutContainer';
-import HeaderArea from './components/HeaderArea';
-import FooterArea from './components/FooterArea';
-import { Route } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux'
-import { withRouter } from 'react-router-dom';
-import * as AllActions from './actions/AppActions'
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { configureStore } from "redux-starter-kit";
+import rootReducer from "./reducers";
+import { Provider, useSelector } from "react-redux";
+import Charts from "./pages/Chart";
+import Login from "./components/Login";
+import Start from "./pages/Start";
+import About from "./pages/About";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 // Styles
-import './styles/App.css';
+import "./styles/index.css";
+import "./styles/App.css";
+import Logout from "./components/Logout";
+
+const store = configureStore({ reducer: rootReducer });
 
 // Main application class
-class App extends Component {
-  state = {
-    userIsLoggedIn: false,
-    username: '',
-    password: '',
-    data: []
-  }
+const App = () => {
+  const userIsLoggedIn = useSelector(state => state.userIsLoggedIn);
 
-  render() {
-    return (
-      <div className="App">
-        <HeaderArea />
-        <div className="MainArea">
-          <Route exact path="/" component={StartContainer} />
-          <Route exact path="/charts" render={() => (
-            this.props.localUserIsLoggedIn ? (<ChartsContainer />) : (<LoginContainer />)
-          )} />
-          <Route path="/login" component={LoginContainer} />
-          <Route path="/about" component={AboutContainer} />
-        </div>
-        <FooterArea />
+  return (
+    <div className="App">
+      <Header />
+      <div className="MainArea">
+        <Route
+          path="/"
+          render={() => (userIsLoggedIn ? <Logout /> : <Login />)}
+        />
+        <Route exact path="/" component={Start} />
+        <Route
+          exact
+          path="/charts"
+          render={() => userIsLoggedIn && <Charts />}
+        />
+        <Route path="/login" component={Login} />
+        <Route path="/about" component={About} />
       </div>
-    );
-  }
-}
-
-// Validate prop types
-App.propTypes = {
-  localUserIsLoggedIn: PropTypes.bool
+      <Footer />
+    </div>
+  );
 };
 
-// Map the redux state to local properties
-const mapStateToProps = state => {
-  return {
-    localUserIsLoggedIn: state.userIsLoggedIn
-  }
-}
-
-// Map the redux dispatch events to local properties
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(AllActions, dispatch)
-})
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default () => (
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>
+);
